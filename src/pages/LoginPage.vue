@@ -1,9 +1,7 @@
 <template>
   <div
     class="bg-no-repeat bg-cover bg-center relative"
-    style="
-      background-image: url(https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1951&amp;q=80);
-    "
+    style="background-image: url(../assets/bg_login.jpg)"
   >
     <div
       class="absolute bg-gradient-to-b from-green-500 to-green-400 opacity-75 inset-0 z-0"
@@ -14,7 +12,7 @@
       >
         <div class="self-start hidden lg:flex flex-col text-white">
           <img src="" class="mb-3" />
-          <h1 class="mb-3 font-bold text-5xl">Hi ? Welcome Back Aji</h1>
+          <h1 class="mb-3 font-bold text-5xl">Baranggay Tejero</h1>
           <p class="pr-3">
             Lorem ipsum is placeholder text commonly used in the graphic, print,
             and publishing industries for previewing layouts and visual mockups
@@ -96,6 +94,4 @@
   </div>
 </template>
 
-<script setup>
-
-</script>
+<script setup></script>
