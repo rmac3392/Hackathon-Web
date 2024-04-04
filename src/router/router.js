@@ -5,6 +5,7 @@ import AdminPage from "../pages/AdminPage.vue";
 import EmployeePage from "../pages/UserPage.vue";
 import Mechanics from "../pages/MechanicPage.vue";
 import LeadLandingPage from "../pages/LeadLandingPage.vue";
+import RewardPage from "../pages/RewardPage.vue";
 const routes = [
   { path: "/", component: LoginPage },
   { path: "/administrator", component: AdminPage },
@@ -12,6 +13,7 @@ const routes = [
   { path: "/user", component: EmployeePage },
   { path: "/mechanincs", component: Mechanics },
   { path: "/landing", component: LeadLandingPage },
+  { path: "/reward", component: RewardPage },
 ];
 
 const router = createRouter({ history: createWebHistory(), routes });

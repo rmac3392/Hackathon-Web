@@ -10,6 +10,9 @@ export default {
         active: "#E5E5E5",
         stroke: "#818589",
       },
+      screens: {
+        "custom-sm": { max: "640px" },
+      },
     },
   },
   plugins: [],
