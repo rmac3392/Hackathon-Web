@@ -138,4 +138,37 @@ import RankingsView from "../views/RankingsView.vue";
 import WeeklyChallengeView from "../views/WeeklyChallengeView.vue";
 import LogoutView from "../views/LogoutView.vue";
 const currentTab = ref(0);
+
+
+
+const username=ref();
+const password =ref();
+const name =ref();
+const purok_id=ref(1);
+
+
+const puroks = ref([]);
+
+
+const register = async()=>{
+    try{
+        const formData = new FormData();
+        formData.append('username',username.value);
+        formData.append('password',password.value);
+        formData.append('name',name.value);
+        formData.append('purok_id',purok_id.value);
+
+        await axios.post("http://localhost:8080/addUser",formData,{
+        headers: {
+        "Content-Type" : "multipart/form-data",
+            },
+        });
+
+
+    }
+    catch(error){
+        console.log("Error",error);
+    }
+}
+
 </script>

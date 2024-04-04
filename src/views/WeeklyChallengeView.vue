@@ -17,6 +17,7 @@
       <form class="max-w-md my-auto mt-[15%]">
         <div class="relative z-0 w-full mb-5 group">
           <input
+            v-model="name"
             type="text"
             name="floating__employee_id"
             id="floating_id"
@@ -33,7 +34,7 @@
         
          
 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Description </label>
-<textarea id="message" rows="4" class="mb-10 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+<input type="file" @change="handleFileImage">
 
           
 <div class="text-white">
@@ -42,7 +43,7 @@
   <div class="">
              
 
-<textarea id="message" rows="4" class="mt-5 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+<textarea v-model="description" id="message" rows="4" class="mt-5 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
 
   </div>
 </div>
@@ -77,6 +78,7 @@
       <div>
         <div class="flex justify-evenly mb-3 gap-5">
           <button
+          @click="postChallenge()"
             type="submit"
             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
@@ -514,6 +516,41 @@
 </div>
     </div>
   </div>
+
 </template>
 
-<script setup></script>
+<script setup>
+import {ref} from "vue";
+import axios from "axios";
+
+const name = ref();
+const description= ref();
+const image = ref(null);
+const postChallenge = async()=>{
+    try{
+        const formData = new FormData();
+        formData.append('name',name.value);
+        formData.append('description',description.value);
+        formData.append('status',1);
+        formData.append('image',image.value);
+
+        await axios.post("http://localhost:8080/addChallenge",formData,{
+        headers: {
+        "Content-Type" : "multipart/form-data",
+            },
+        });
+        window.location.reload();
+    }
+    catch(error){
+        console.log("error:",error);
+    }
+
+}
+
+const handleFileImage = (event) => {
+  const file = (event.target.files || [])[0];
+
+    image.value = file;
+};
+
+</script>

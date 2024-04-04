@@ -13,29 +13,9 @@
       <div class="m-5">
         <ul class="list-disc list-inside">
           <li class="mb-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
-            dolorum quo recusandae facere doloribus ex quidem sed quas tempora
-            quasi harum at, magnam similique. Numquam accusamus perferendis
-            dicta? Odio, sequi.
+           {{ description }}
           </li>
-          <li class="mb-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
-            dolorum quo recusandae facere doloribus ex quidem sed quas tempora
-            quasi harum at, magnam similique. Numquam accusamus perferendis
-            dicta? Odio, sequi.
-          </li>
-          <li class="mb-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
-            dolorum quo recusandae facere doloribus ex quidem sed quas tempora
-            quasi harum at, magnam similique. Numquam accusamus perferendis
-            dicta? Odio, sequi.
-          </li>
-          <li class="mb-3">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim,
-            dolorum quo recusandae facere doloribus ex quidem sed quas tempora
-            quasi harum at, magnam similique. Numquam accusamus perferendis
-            dicta? Odio, sequi.
-          </li>
+ 
         </ul>
 
         <div>
@@ -70,7 +50,7 @@
                   SVG, PNG, JPG or GIF (MAX. 800x400px)
                 </p>
               </div>
-              <input id="dropzone-file" type="file" class="hidden" />
+              <input @change="handleFileImage" id="dropzone-file" type="file" class="hidden" />
             </label>
           </div>
 
@@ -78,23 +58,71 @@
             <div class="mt-3">Desription:</div>
 
             <textarea
+            v-model="description_text"
               id="message"
               rows="4"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Write your thoughts here..."
             ></textarea>
           </div>
-          <router-link to="/landing">
             <button
+            @click="submitChallenge"
               type="button"
               class="text-white w-full mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               Submit
             </button>
-          </router-link>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import {ref,onMounted} from "vue";
+import { useRouter } from "vue-router";
+onMounted(()=>{
+  getChallengeByID();
+});
+
+const id = localStorage.getItem('challenge_id');
+const user_id = localStorage.getItem('user_id');
+console.log(id)
+const description = ref();
+const router = useRouter();
+const getChallengeByID = async () =>{
+    const response = await fetch(`http://localhost:8080/getChallengeByID/${id}`);
+    const data = await response.json();
+    description.value = data[0].description;
+  }
+
+  const image = ref(null);
+
+
+const description_text = ref();
+const handleFileImage = (event) => {
+  const file = (event.target.files || [])[0];
+
+    image.value = file;
+}
+const submitChallenge = async()=>{
+    try{
+        const formData = new FormData();
+        formData.append('user_id',user_id);
+        formData.append('description',description_text.value);
+        formData.append('image',image.value);
+
+
+        await axios.post("http://localhost:8080/submitChallenge",formData,{
+        headers: {
+        "Content-Type" : "multipart/form-data",
+            },
+        });
+        router.push('/landing');
+    }
+    catch(error){
+        console.log("error:",error);
+    }
+}
+
+
+</script>
