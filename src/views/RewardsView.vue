@@ -2,10 +2,19 @@
   <div>
     <div class="font-bold text-xl">Create Rewards</div>
     <div class="flex flex-wrap gap-10 justify-center mt-[5%]">
-      <div class="w-[20%]"><CardRewards rewardsName="Tree Planting" activityPoints="100P"/></div>
-      <div class="w-[20%]"><CardRewards rewardsName="Limpyo Sapa" activityPoints="100P"/></div>
-      <div class="w-[20%]"><CardRewards rewardsName="Limpyo kanal" activityPoints="100P"/></div>
-      <div class="w-[20%]"><CardRewards rewardsName="Tree Planting" activityPoints="100P"/></div>
+      
+      <div class="w-[20%]">
+    <!-- Provide correct image path relative to the HTML file location -->
+    <CardRewards rewardsName="Limpyo Sapa" activityPoints="100P"/>
+  </div>
+  <div class="w-[20%]">
+    <!-- Provide correct image path relative to the HTML file location -->
+    <CardRewards rewardsName="Limpyo kanal" activityPoints="100P" />
+  </div>
+  <div class="w-[20%]">
+    <!-- Provide correct image path relative to the HTML file location -->
+    <CardRewards rewardsName="Tree Planting" activityPoints="100P" />
+  </div>
     </div>
     
     <div>
