@@ -1,10 +1,18 @@
 <template>
   <div>
-    <div class="font-bold text-xl mb-2">Manage Employee:</div>
+    <div class="font-bold text-xl">Create Rewards</div>
+    <div class="flex flex-wrap gap-10 justify-center mt-[5%]">
+      <div class="w-[20%]"><CardRewards rewardsName="Tree Planting" activityPoints="100P"/></div>
+      <div class="w-[20%]"><CardRewards rewardsName="Limpyo Sapa" activityPoints="100P"/></div>
+      <div class="w-[20%]"><CardRewards rewardsName="Limpyo kanal" activityPoints="100P"/></div>
+      <div class="w-[20%]"><CardRewards rewardsName="Tree Planting" activityPoints="100P"/></div>
+    </div>
+    
+    <div>
 
-    <div class="">
+      <div class="mt-20">
       <article
-        class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+        class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 py-10"
       >
         <h2
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -12,7 +20,7 @@
         <div class="flex">
           <!-- Form -->
           <div class="w-1/3">
-            <form class="max-w-md">
+            <form class="max-w-md my-auto mt-[15%]">
               <div class="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
@@ -25,7 +33,7 @@
                 <label
                   for="floating__employee_id"
                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Purok Team Name</label
+                  >Activity Name</label
                 >
               </div>
               <div class="grid md:grid-cols-2 md:gap-6">
@@ -41,25 +49,29 @@
                   <label
                     for="floating_first_name"
                     class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >First name</label
+                    >Reward</label
                   >
                 </div>
-                <div class="relative z-0 w-full mb-5 group">
-                  <input
-                    type="text"
-                    name="floating_last_name"
-                    id="floating_last_name"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="floating_last_name"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >Last name</label
-                  >
-                </div>
+                  
               </div>
+              <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Description </label>
+<textarea id="message" rows="4" class="mb-10 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+
+          
+                
+<div class="flex items-center justify-center w-[55%] h-[40%]">
+    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+            </svg>
+            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+        </div>
+        <input id="dropzone-file" type="file" class="hidden" />
+    </label>
+</div> 
+
               <!-- <div class="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
@@ -75,153 +87,14 @@
                   >Middle name</label
                 >
               </div> -->
-              <div class="relative z-0 w-full mb-5 group">
-                <input
-                  type="email"
-                  name="floating_email"
-                  id="floating_email"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="floating_email"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Email address</label
-                >
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 w-full mb-5 group">
-                  <input
-                    type="date"
-                    name="floating_birthdate"
-                    id="floating_birthdate"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="floating_first_name"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >Birthdate</label
-                  >
-                </div>
-                <div class="flex z-0 w-full mb-5 justify-evenly group">
-                  <div class="flex justify-end items-end">
-                    <input
-                      id="default-radio-1"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    />
-                    <label
-                      for="default-radio-1"
-                      class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >Male</label
-                    >
-                  </div>
-                  <div class="flex justify-end items-end">
-                    <input
-                      checked
-                      id="default-radio-2"
-                      type="radio"
-                      value=""
-                      name="default-radio"
-                      class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    />
-                    <label
-                      for="default-radio-2"
-                      class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                      >Female</label
-                    >
-                  </div>
-                </div>
-              </div>
+              
 
-              <div class="relative z-0 w-full mb-5 group">
-                <input
-                  type="text"
-                  name="floating_address"
-                  id="floating_address"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="floating_address"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Address</label
-                >
-              </div>
-
-              <label
-                for="countries"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Select an option</label
-              >
-              <select
-                id="countries"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              >
-                <option selected disabled>Select Which Purok</option>
-                <option value="tejero">Tejero</option>
-                <option value="tinago">Tinago</option>
-                <option value="pahina-central">Pahina Central</option>
-                <option value="cogon-ramos">Cogon Ramos</option>
-              </select>
-              <div class="grid md:grid-cols-2 md:gap-6 mt-5">
-                <div class="relative z-0 w-full mb-5 group">
-                  <input
-                    type="tel"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    name="floating_phone"
-                    id="floating_phone"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="floating_phone"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >Phone number 09*********</label
-                  >
-                </div>
-                
-              </div>
-              <div class="relative z-0 w-full mb-5 group">
-                <input
-                  type="password"
-                  name="floating_password"
-                  id="floating_password"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="floating_password"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Password</label
-                >
-              </div>
-              <div class="relative z-0 w-full mb-5 group">
-                <input
-                  type="password"
-                  name="repeat_password"
-                  id="floating_repeat_password"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="floating_repeat_password"
-                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >Confirm password</label
-                >
-              </div>
+              
+             
+              
 
              
-              <button class="bg-yellow-200 px-5 py-2 rounded-lg">Save</button>
+              
             </form>
           </div>
           <div class="w-2/3">
@@ -271,15 +144,11 @@
                             >
                           </div>
                         </th>
-                        <th scope="col" class="px-6 py-3">Purok Team Name</th>
-                        <th scope="col" class="px-6 py-3">First Name</th>
-                        <th scope="col" class="px-6 py-3">Last Name</th>
-                        <th scope="col" class="px-6 py-3">Email Address</th>
-                        <th scope="col" class="px-6 py-3">BirthDate</th>
-                        <th scope="col" class="px-6 py-3">Gender</th>
-                        <th scope="col" class="px-6 py-3">Address</th>
-                        <th scope="col" class="px-6 py-3">Purok Name</th>
-                        <th scope="col" class="px-6 py-3">Phone Number</th>
+                        <th scope="col" class="px-6 py-3">Activity Name</th>
+                        <th scope="col" class="px-6 py-3">Rewards</th>
+                        <th scope="col" class="px-6 py-3">Image</th>
+                        
+                        
                         <th scope="col" class="px-6 py-3">Action</th>
                       </tr>
                     </thead>
@@ -306,13 +175,9 @@
                           Apple MacBook Pro 17"
                         </th>
                         <td class="px-6 py-4">Silver</td>
-                        <td class="px-6 py-4">Laptop</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$2999</td>
-                        <td class="px-6 py-4">3.0 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                    
+                        
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -347,14 +212,11 @@
                         >
                           Microsoft Surface Pro
                         </th>
-                        <td class="px-6 py-4">White</td>
-                        <td class="px-6 py-4">Laptop PC</td>
+                        
+                       
                         <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$1999</td>
-                        <td class="px-6 py-4">1.0 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                       
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -390,13 +252,8 @@
                           Magic Mouse 2
                         </th>
                         <td class="px-6 py-4">Black</td>
-                        <td class="px-6 py-4">Accessories</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                       
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -432,13 +289,8 @@
                           Apple Watch
                         </th>
                         <td class="px-6 py-4">Black</td>
-                        <td class="px-6 py-4">Watches</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">$199</td>
-                        <td class="px-6 py-4">0.12 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                       
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -474,13 +326,8 @@
                           Apple iMac
                         </th>
                         <td class="px-6 py-4">Silver</td>
-                        <td class="px-6 py-4">PC</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$2999</td>
-                        <td class="px-6 py-4">7.0 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                        
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -516,13 +363,8 @@
                           Apple AirPods
                         </th>
                         <td class="px-6 py-4">White</td>
-                        <td class="px-6 py-4">Accessories</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$399</td>
-                        <td class="px-6 py-4">38 g</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                        
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -558,13 +400,8 @@
                           iPad Pro
                         </th>
                         <td class="px-6 py-4">Gold</td>
-                        <td class="px-6 py-4">Tablet</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$699</td>
-                        <td class="px-6 py-4">1.3 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                        
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -600,13 +437,8 @@
                           Magic Keyboard
                         </th>
                         <td class="px-6 py-4">Black</td>
-                        <td class="px-6 py-4">Accessories</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">453 g</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                       
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -642,13 +474,8 @@
                           Apple TV 4K
                         </th>
                         <td class="px-6 py-4">Black</td>
-                        <td class="px-6 py-4">TV</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">$179</td>
-                        <td class="px-6 py-4">1.78 lb.</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                      
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -684,13 +511,8 @@
                           AirTag
                         </th>
                         <td class="px-6 py-4">Silver</td>
-                        <td class="px-6 py-4">Accessories</td>
-                        <td class="px-6 py-4">Yes</td>
-                        <td class="px-6 py-4">No</td>
-                        <td class="px-6 py-4">$29</td>
-                        <td class="px-6 py-4">53 g</td>
-                        <td class="px-6 py-4">$99</td>
-                        <td class="px-6 py-4">0.2 lb.</td>
+                        <td class="px-6 py-4">Silver</td>
+                       
                         <td class="flex items-center px-6 py-4">
                           <a
                             href="#"
@@ -713,9 +535,13 @@
         </div>
       </article>
     </div>
-    <div class="font-bold text-xl mt-2">Manage Lead:</div>
-    <div class=""></div>
+    </div>
+    <div>
+     
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import CardRewards from "../components/CardRewards.vue"
+</script>
